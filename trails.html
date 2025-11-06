@@ -1,105 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Berry College Trails</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      color: #4B2E83; /* Berry purple */
+      margin-top: 20px;
+    }
+    #map {
+      height: 600px;
+      width: 90%;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px auto;
+      width: 90%;
+    }
+    .gallery img {
+      margin: 10px;
+      border-radius: 10px;
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Berry College Trails</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="trails.html" class="active">Trails</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section class="intro">
-      <h2 class="section-title">Explore Berry College Trails</h2>
-      <p>Welcome! Berry College offers scenic hiking, biking, and horseback trails across its 27,000-acre campus. Trails wind through forests, lakes, and mountains, offering recreation and outdoor learning for students.</p>
-    </section>
+<h1>Berry College Trails</h1>
 
-    <section class="research-history">
-      <h2 class="section-title">Research & History</h2>
-      <p>The Berry College trail network is more than just paths. The campus serves as an outdoor lab for ecological studies, land management, and recreation. Trails like the Viking Trail connect campuses, and others traverse conservation zones.</p>
-      <p>The <strong>Longleaf Pine Trail</strong> passes through longleaf pine restoration areas.</p>
-      <p><em>Maintenance Notice:</em> The Longleaf Pine Trail is currently under trail maintenance as of November 2025.</p>
-    </section>
+<div id="map"></div>
 
-    <section class="trail-list">
-      <h2 class="section-title">Trail Directory</h2>
+<div class="gallery">
+  <!-- Add trail images here -->
+  <!-- Example: <img src="images/trail1.jpg" alt="Trail 1"> -->
+</div>
 
-      <!-- Viking Trail -->
-      <article class="trail-card">
-        <h3>Viking Trail</h3>
-        <p><strong>Distance:</strong> ~3 miles | <strong>Difficulty:</strong> Easy | <strong>Surface:</strong> Paved</p>
-        <p>Connects the main campus to the Mountain Campus along a shaded route. Excellent for biking, jogging, and walking.</p>
-        <!-- Replace the src below with actual Google Maps embed link -->
-        <iframe src="https://www.google.com/maps/embed?pb=YOUR_VIKING_TRAIL_EMBED_CODE" allowfullscreen="" loading="lazy"></iframe>
-      </article>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  // Center map on Berry College
+  var map = L.map('map').setView([34.2315, -85.1821], 15);
 
-      <!-- House o' Dreams Trail -->
-      <article class="trail-card">
-        <h3>House o’ Dreams Trail</h3>
-        <p><strong>Distance:</strong> ~4.8 miles | <strong>Difficulty:</strong> Moderate | <strong>Surface:</strong> Natural trail</p>
-        <p>Leads up Lavender Mountain to the historic House o’ Dreams built in 1922. Offers panoramic views of the campus and valleys.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=YOUR_HOUSE_O_DREAMS_EMBED_CODE" allowfullscreen="" loading="lazy"></iframe>
-      </article>
+  // OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+    maxZoom: 19
+  }).addTo(map);
 
-      <!-- Snow Loop -->
-      <article class="trail-card">
-        <h3>Snow Loop</h3>
-        <p><strong>Distance:</strong> ~7.2 miles | <strong>Difficulty:</strong> Moderate to Hard | <strong>Surface:</strong> Natural trail</p>
-        <p>Loop through forested ridges and open fields. Great for long runs, endurance hikes, and wildlife spotting.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=YOUR_SNOW_LOOP_EMBED_CODE" allowfullscreen="" loading="lazy"></iframe>
-      </article>
+  // Berry Trails data
+  var trails = [
+    {
+      name: "Trail 1",
+      marker: [34.2315, -85.1821],
+      path: [
+        [34.2315, -85.1821],
+        [34.2320, -85.1830],
+        [34.2330, -85.1840]
+      ],
+      color: "#4B2E83" // Berry purple
+    },
+    {
+      name: "Trail 2",
+      marker: [34.2340, -85.1800],
+      path: [
+        [34.2340, -85.1800],
+        [34.2350, -85.1810],
+        [34.2360, -85.1820]
+      ],
+      color: "#FFD700" // Berry gold
+    },
+    {
+      name: "Trail 3",
+      marker: [34.2300, -85.1850],
+      path: [
+        [34.2300, -85.1850],
+        [34.2310, -85.1860],
+        [34.2320, -85.1870]
+      ],
+      color: "#00AEEF" // Berry blue
+    }
+    // Add more trails here
+  ];
 
-      <!-- Old Redmond Gap Road Trail -->
-      <article class="trail-card">
-        <h3>Old Redmond Gap Road Trail</h3>
-        <p><strong>Distance:</strong> ~5.4 miles | <strong>Difficulty:</strong> Moderate | <strong>Surface:</strong> Old road/natural trail</p>
-        <p>Follows a quiet old road through pine woods. Ideal for hiking, biking, and horseback riding.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=YOUR_OLD_REDMOND_EMBED_CODE" allowfullscreen="" loading="lazy"></iframe>
-      </article>
+  // Add trails to the map
+  trails.forEach(trail => {
+    L.marker(trail.marker).addTo(map)
+      .bindPopup(trail.name);
+    L.polyline(trail.path, {color: trail.color, weight: 4}).addTo(map);
+  });
+</script>
 
-      <!-- Hurtin’ Gator Trail -->
-      <article class="trail-card">
-        <h3>Hurtin’ Gator Trail</h3>
-        <p><strong>Distance:</strong> ~3.7 miles | <strong>Difficulty:</strong> Hard | <strong>Surface:</strong> Natural trail</p>
-        <p>Steep climbs and switchbacks provide a challenging trail for hikers and bikers. Scenic views of surrounding mountains.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=YOUR_HURTIN_GATOR_EMBED_CODE" allowfullscreen="" loading="lazy"></iframe>
-      </article>
-
-      <!-- Berry Reservoir Trail -->
-      <article class="trail-card">
-        <h3>Berry Reservoir Trail</h3>
-        <p><strong>Distance:</strong> ~2.8 miles | <strong>Difficulty:</strong> Easy | <strong>Surface:</strong> Gravel/packed trail</p>
-        <p>Loop around Berry Reservoir with lake views and abundant wildlife. Great for beginners and casual biking.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=YOUR_RESERVOIR_EMBED_CODE" allowfullscreen="" loading="lazy"></iframe>
-      </article>
-
-      <!-- Longleaf Pine Trail -->
-      <article class="trail-card">
-        <h3>Longleaf Pine Trail</h3>
-        <p><strong>Distance:</strong> ~3.5 miles | <strong>Difficulty:</strong> Moderate | <strong>Surface:</strong> Natural trail</p>
-        <p>Trail passes through longleaf pine restoration areas. Currently under maintenance as of November 2025.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=YOUR_LONGLEAF_EMBED_CODE" allowfullscreen="" loading="lazy"></iframe>
-      </article>
-
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Berry College Trails Project | Built by Berry students</p>
-  </footer>
 </body>
 </html>
+
 
 
 
