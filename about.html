@@ -3,45 +3,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Berry College Trails - About</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>About Berry College Trails</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    .about {
-      max-width: 800px;
-      margin: auto;
-      padding: 2em;
-      line-height: 1.6;
+    :root {
+      --berry-navy: #0C2340;
+      --white: #FFFFFF;
+      --neutral-light: #F9F9F9;
+      --neutral-dark: #333;
     }
-    .about h2 {
-      color: #004c2c;
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: var(--neutral-light);
+      color: var(--neutral-dark);
+    }
+
+    header {
+      background-color: var(--berry-navy);
+      color: var(--white);
+      padding: 16px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+    }
+
+    nav li {
+      margin: 0 12px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: bold;
+    }
+
+    nav a.active {
+      border-bottom: 3px solid var(--white);
+      padding-bottom: 2px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: var(--berry-navy);
+    }
+
+    h2.section-title {
+      border-bottom: 3px solid var(--berry-navy);
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+
+    .about-section p {
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      background-color: var(--berry-navy);
+      color: var(--white);
+      text-align: center;
+      padding: 12px 0;
+      margin-top: 40px;
+    }
+
+    a {
+      color: var(--berry-navy);
+    }
+
+    a:hover {
+      color: #555;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Berry College Trails</h1>
+    <h1>About Berry College Trails</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="trails.html">Trails</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="about.html">About</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="trails.html">Trails</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
     </nav>
   </header>
 
-  <main class="about">
-    <h2>About This Project</h2>
-    <p>The Berry College Trails project was created to share information about the beautiful and extensive trail system at Berry College. Our goal is to promote outdoor recreation, sustainability, and stewardship of Berry’s natural lands.</p>
+  <main>
+    <section class="about-section">
+      <h2 class="section-title">Our Mission</h2>
+      <p>The Berry College trail network connects students, staff, and visitors with nature, providing opportunities for recreation, education, and ecological research.</p>
 
-    <p>This website is student-built and community-supported. We aim to make it easier for hikers, students, and visitors to explore the campus responsibly while learning about Berry’s environmental efforts.</p>
+      <h2 class="section-title">History</h2>
+      <p>Berry College has been maintaining and developing its trail system for decades. Trails such as the Viking Trail and House o’ Dreams Trail reflect both the college’s natural beauty and historical landmarks.</p>
 
-    <h2>Contact & Collaboration</h2>
-    <p>Interested in contributing photos or trail information? You can help update this website by contacting the environmental studies team at Berry College.</p>
-
-    <p><strong>GitHub Repository:</strong> <a href="https://github.com/YOUR-USERNAME/berry-trails" target="_blank">berry-trails</a></p>
+      <h2 class="section-title">Conservation & Research</h2>
+      <p>Many trails pass through conservation areas and restoration projects, including the Longleaf Pine restoration project. Students and faculty use the trails as outdoor classrooms to study ecology, wildlife, and environmental management.</p>
+    </section>
   </main>
 
   <footer>
-    <p>© 2025 Berry College Trails Project</p>
+    <p>© 2025 Berry College Trails Project | Built by Berry students</p>
   </footer>
 </body>
 </html>
+
