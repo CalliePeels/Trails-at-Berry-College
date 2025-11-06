@@ -6,43 +6,119 @@
   <title>Berry College Trails</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Additional styles to improve layout */
+    /* Berry College Colors */
+    :root {
+      --berry-navy: #0C2340;  /* primary color */
+      --white: #FFFFFF;
+      --neutral-light: #F9F9F9;
+      --neutral-dark: #333;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: var(--neutral-light);
+      color: var(--neutral-dark);
+    }
+
+    header {
+      background-color: var(--berry-navy);
+      color: var(--white);
+      padding: 16px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+    }
+
+    nav li {
+      margin: 0 12px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: bold;
+    }
+
+    nav a.active {
+      border-bottom: 3px solid var(--white);
+      padding-bottom: 2px;
+    }
+
     main {
       max-width: 1000px;
       margin: 0 auto;
       padding: 20px;
     }
+
+    h1, h2, h3 {
+      color: var(--berry-navy);
+    }
+
+    h2.section-title {
+      border-bottom: 3px solid var(--berry-navy);
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+
     .trail-card {
-      border: 1px solid #ddd;
+      border: 1px solid var(--berry-navy);
       border-radius: 12px;
       padding: 16px;
       margin-bottom: 24px;
+      background-color: var(--white);
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
     .trail-card h3 {
       margin-top: 0;
     }
+
     .trail-card iframe {
       width: 100%;
       height: 300px;
       border-radius: 8px;
       margin-top: 12px;
+      border: 2px solid var(--berry-navy);
     }
+
     .research-history {
-      background: #f9f9f9;
+      background: var(--white);
       padding: 20px;
       border-radius: 12px;
       margin-bottom: 32px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .section-title {
-      border-bottom: 2px solid #555;
-      padding-bottom: 6px;
-      margin-bottom: 16px;
-    }
+
     .map-note {
       font-size: 0.9em;
       color: #555;
+    }
+
+    footer {
+      background-color: var(--berry-navy);
+      color: var(--white);
+      text-align: center;
+      padding: 12px 0;
+      margin-top: 40px;
+    }
+
+    a {
+      color: var(--berry-navy);
+    }
+
+    a:hover {
+      color: #555;
+    }
+
+    .intro p {
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -65,65 +141,63 @@
       <p>Welcome! Berry College offers miles of scenic hiking, biking, and horseback riding trails across its 27,000-acre campus. Trails wind through forests, lakes, and mountains, offering both recreational opportunities and outdoor learning for students.</p>
     </section>
 
-    <!-- 🧬 Research & History -->
     <section class="research-history">
       <h2 class="section-title">Research & History</h2>
       <p>The Berry College trail network is more than just scenic paths. The campus serves as a living outdoor laboratory for ecological studies, land management, and recreation. The iconic Viking Trail connects the main and mountain campuses, while other trails traverse conservation zones and wildlife habitats.</p>
-      <p>One standout effort is the <strong>Berry Longleaf Pine Project</strong>, which restores rare longleaf pine stands on Lavender Mountain. Researchers at Berry traced trees over 200 years old, implemented student-led monitoring, and collaborated with The Nature Conservancy to restore hundreds of acres. Trails like the Longleaf Pine Trail pass through these restoration zones.</p>
-      <p><em>Maintenance Notice:</em> The Longleaf Pine Trail is currently under trail maintenance as of November 2025. Please check for route updates and stay on designated paths while restoration is in progress.</p>
+      <p>One standout effort is the <strong>Berry Longleaf Pine Project</strong>, which restores rare longleaf pine stands on Lavender Mountain. Trails like the Longleaf Pine Trail pass through these restoration zones.</p>
+      <p><em>Maintenance Notice:</em> The Longleaf Pine Trail is currently under trail maintenance as of November 2025. Please check for updates and stay on designated paths.</p>
     </section>
 
-    <!-- 🥾 Trail Directory -->
     <section class="trail-list">
       <h2 class="section-title">Trail Directory</h2>
 
       <article class="trail-card">
-        <h3>🏞️ Viking Trail</h3>
-        <p><strong>Distance:</strong> ~3 miles (one way) | <strong>Difficulty:</strong> Easy | <strong>Surface:</strong> Paved</p>
-        <p>Connects the main campus to the Mountain Campus along a shaded route. Excellent for biking, jogging, and casual walking. Scenic views and benches along the way.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3341.573903813163!2d-85.1928!3d34.2906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885b597ecbb8d6f9%3A0x410c3f1d5c91f409!2sViking%20Trail%2C%20Rome%2C%20GA!5e0!3m2!1sen!2sus!4v1730911123456"></iframe>
+        <h3>Viking Trail</h3>
+        <p><strong>Distance:</strong> ~3 miles | <strong>Difficulty:</strong> Easy | <strong>Surface:</strong> Paved</p>
+        <p>Connects the main campus to the Mountain Campus along a shaded route. Excellent for biking, jogging, and casual walking.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
       </article>
 
       <article class="trail-card">
-        <h3>🏡 House o’ Dreams Trail</h3>
+        <h3>House o’ Dreams Trail</h3>
         <p><strong>Distance:</strong> ~4.8 miles | <strong>Difficulty:</strong> Moderate | <strong>Surface:</strong> Natural trail</p>
-        <p>Leads up Lavender Mountain to the historic House o’ Dreams built in 1922. Offers panoramic views of the campus and surrounding valleys. Good for photography and moderate hiking.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.4209089735015!2d-85.1897!3d34.3132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885b59b9a9eec48b%3A0x9b5a97bb35ff99d3!2sHouse%20o'%20Dreams!5e0!3m2!1sen!2sus!4v1730911129875"></iframe>
+        <p>Leads up Lavender Mountain to the historic House o’ Dreams built in 1922. Offers panoramic views of the campus and surrounding valleys.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
       </article>
 
       <article class="trail-card">
-        <h3>❄️ Snow Loop</h3>
+        <h3>Snow Loop</h3>
         <p><strong>Distance:</strong> ~7.2 miles | <strong>Difficulty:</strong> Moderate to Hard | <strong>Surface:</strong> Natural trail</p>
-        <p>Popular loop through forested ridges and open fields. Great for long runs, endurance hikes, and wildlife spotting. Steeper sections provide a challenging workout.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.830198003329!2d-85.2006!3d34.2983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885b5adf6cc3e739%3A0x2a2afbc74f9d3e42!2sSnow%20Loop%20Trail%2C%20Berry%20College!5e0!3m2!1sen!2sus!4v1730911133344"></iframe>
+        <p>Popular loop through forested ridges and open fields. Great for long runs, endurance hikes, and wildlife spotting.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
       </article>
 
       <article class="trail-card">
-        <h3>🌳 Old Redmond Gap Road Trail</h3>
+        <h3>Old Redmond Gap Road Trail</h3>
         <p><strong>Distance:</strong> ~5.4 miles | <strong>Difficulty:</strong> Moderate | <strong>Surface:</strong> Old road/natural trail</p>
-        <p>Follows a quiet old road through pine woods. Ideal for hiking, biking, and horseback riding. Scenic and peaceful with minimal traffic.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.5898848617624!2d-85.1981!3d34.2975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885b5ae2c3f1f6f3%3A0x8e7ed8c1ad0d0e7!2sOld%20Redmond%20Gap%20Rd%2C%20Berry%20College!5e0!3m2!1sen!2sus!4v1730911137778"></iframe>
+        <p>Follows a quiet old road through pine woods. Ideal for hiking, biking, and horseback riding.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
       </article>
 
       <article class="trail-card">
-        <h3>🐊 Hurtin’ Gator Trail</h3>
+        <h3>Hurtin’ Gator Trail</h3>
         <p><strong>Distance:</strong> ~3.7 miles | <strong>Difficulty:</strong> Hard | <strong>Surface:</strong> Natural trail</p>
-        <p>Steep climbs and switchbacks provide a challenging trail for hikers and bikers. Scenic views of the surrounding mountains reward the effort.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.091765994488!2d-85.2067!3d34.3015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885b5b1d5a9ec6bb%3A0x97dbd478e8b1bb15!2sHurtin'%20Gator%20Trail!5e0!3m2!1sen!2sus!4v1730911141289"></iframe>
+        <p>Steep climbs and switchbacks provide a challenging trail for hikers and bikers. Scenic views of the surrounding mountains.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
       </article>
 
       <article class="trail-card">
-        <h3>💧 Berry Reservoir Trail</h3>
+        <h3>Berry Reservoir Trail</h3>
         <p><strong>Distance:</strong> ~2.8 miles | <strong>Difficulty:</strong> Easy | <strong>Surface:</strong> Gravel/packed trail</p>
-        <p>Loop around Berry Reservoir with lake views and abundant wildlife. Great for beginners, walking, and casual biking.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.830198003329!2d-85.1975!3d34.2998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885b5a9f62a11e19%3A0xd4441d938cc0b01a!2sBerry%20Reservoir!5e0!3m2!1sen!2sus!4v1730911144460"></iframe>
+        <p>Loop around Berry Reservoir with lake views and abundant wildlife. Great for beginners and casual biking.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
       </article>
 
       <article class="trail-card">
-        <h3>🌲 Longleaf Pine Trail</h3>
+        <h3>Longleaf Pine Trail</h3>
         <p><strong>Distance:</strong> ~3.5 miles | <strong>Difficulty:</strong> Moderate | <strong>Surface:</strong> Natural trail</p>
-        <p>Trail passes through longleaf pine restoration areas. Currently under maintenance as of November 2025. Great for ecology enthusiasts and hikers.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.830198003329!2d-85.1983!3d34.3005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885b5aa0b4e9f1b5%3A0x123456789abcdef!2sLongleaf%20Pine%20Trail!5e0!3m2!1sen!2sus!4v1730911148000"></iframe>
+        <p>Trail passes through longleaf pine restoration areas. Currently under maintenance as of November 2025.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
       </article>
     </section>
   </main>
@@ -133,5 +207,6 @@
   </footer>
 </body>
 </html>
+
 
 
