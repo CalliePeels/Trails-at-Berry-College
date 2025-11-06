@@ -1,27 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Berry College Trails - Trails</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berry College Trails</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <h1>Berry College Trails</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="trails.html">Trails</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="about.html">About</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="trails.html" class="active">Trails</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
     </nav>
   </header>
+
   <main>
-    <h2>All Trails</h2>
-    <ul>
-      <li>House o' Dreams Trail – 5.3 miles</li>
-      <li>Reservoir Loop – 3.2 miles</li>
-      <li>Viking Trail – 2.8 miles</li>
-      <li>Old Mill Trail – 1.5 miles</li>
-    </ul>
+    <section class="intro">
+      <h2>Explore Berry’s Scenic Trails</h2>
+      <p>Welcome to the Berry College Trails site! Discover miles of walking, biking, and horseback paths that wind through forests, mountains, and lakes. Use the interactive map below or scroll to see details for each trail.</p>
+    </section>
+
+    <!-- 🌍 Master Interactive Map -->
+    <section class="master-map">
+      <h2>Interactive Campus Map</h2>
+      <iframe
+        src="https://www.google.com/maps/d/embed?mid=1l3DPXrJ1Chtku6k2XvHuOAFsnJ4PVdA&ehbc=2E312F"
+        width="100%"
+        height="480"
+        style="border:0; border-radius: 12px;"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+      <p class="map-note">Tip: Click the markers to view trail names and directions.</p>
+    </section>
+
+    <!-- 🥾 Individual Trail Listings -->
+    <section class="trail-list">
+      <h2>Trail Directory</h2>
+
+      <!-- Trail Example -->
+      <article class="trail-card">
+        <h3>🏞️ Viking Trail</h3>
+        <p><strong>Distance:</strong> ~3 miles (one way) | <strong>Difficulty:</strong> Easy | <strong>Surface:</strong> Paved</p>
+        <p>Connects the main campus to Mountain Campus along a scenic, shaded route. Excellent for biking and jogging.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3341.573903813163!2d-85.1928!3d34.2906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885b597ecbb8d6f9%3A0x410c3f1d5c91f409!2sViking%20Trail%2C%20Rome%2C%20GA!5e0!3m2!1sen!2sus!4v1730911123456"></iframe>
+      </article>
+
+      <article class="trail-card">
+        <h3>🏡 House o’ Dreams Trail</h3>
+        <p><strong>Distance:</strong> ~4.8 miles | <strong>Difficulty:</strong> Moderate</p>
+        <p>Leads up Lavender Mountain to the historic House o’ Dreams built in 1922. Offers panoramic views and great photo spots.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.4209089735015!2d-85.1897!3d34.3132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885b59b9a9eec48b%3A0x9b5a97bb35ff99d3!2sHouse%20o'%20Dreams!5e0!3m2!1sen!2sus!4v1730911129875"></iframe>
+      </article>
+
+      <article class="trail-card">
+        <h3>❄️ Snow Loop</h3>
+        <p><strong>Distance:</strong> ~7.2 miles | <strong>Difficulty:</strong> Moderate to Hard</p>
+        <p>Popular long loop through forested ridges and open fields. Great for long runs and endurance hikes.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.830198003329!2d-85.2006!3d34.2983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885b5adf6cc3e739%3A0x2a2afbc74f9d3e42!2sSnow%20Loop%20Trail%2C%20Berry%20College!5e0!3m2!1sen!2sus!4v1730911133344"></iframe>
+      </article>
+
+      <article class="trail-card">
+        <h3>🌳 Old Redmond Gap Road Trail</h3>
+        <p><strong>Distance:</strong> ~5.4 miles | <strong>Difficulty:</strong> Moderate</p>
+        <p>Follows an old road through quiet pine woods. Good for biking, horseback riding, and hiking.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.5898848617624!2d-85.1981!3d34.2975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885b5ae2c3f1f6f3%3A0x8e7ed8c1ad0d0e7!2sOld%20Redmond%20Gap%20Rd%2C%20Berry%20College!5e0!3m2!1sen!2sus!4v1730911137778"></iframe>
+      </article>
+
+      <article class="trail-card">
+        <h3>🐊 Hurtin’ Gator Trail</h3>
+        <p><strong>Distance:</strong> ~3.7 miles | <strong>Difficulty:</strong> Hard</p>
+        <p>Steep climbs and switchbacks make this trail great for serious hikers and bikers.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.091765994488!2d-85.2067!3d34.3015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885b5b1d5a9ec6bb%3A0x97dbd478e8b1bb15!2sHurtin'%20Gator%20Trail!5e0!3m2!1sen!2sus!4v1730911141289"></iframe>
+      </article>
+
+      <article class="trail-card">
+        <h3>💧 Berry Reservoir Trail</h3>
+        <p><strong>Distance:</strong> ~2.8 miles | <strong>Difficulty:</strong> Easy</p>
+        <p>Scenic loop around Berry Reservoir with beautiful lake views and wildlife sightings.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.830198003329!2d-85.1975!3d34.2998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885b5a9f62a11e19%3A0xd4441d938cc0b01a!2sBerry%20Reservoir!5e0!3m2!1sen!2sus!4v1730911144460"></iframe>
+      </article>
+    </section>
+
+    <section class="maps">
+      <h2>Downloadable Resources</h2>
+      <p>Get the official <a href="https://www.berry.edu/student-life/_assets/trail-map.pdf" target="_blank">Berry College Trail Map (PDF)</a> for printable navigation.</p>
+    </section>
   </main>
+
+  <footer>
+    <p>© 2025 Berry College Trails Project | Built by Berry students</p>
+  </footer>
 </body>
 </html>
+
