@@ -3,53 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Berry College Trails - Gallery</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Berry College Trails Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    .gallery {
+    /* Berry College Colors */
+    :root {
+      --berry-navy: #0C2340;
+      --white: #FFFFFF;
+      --neutral-light: #F9F9F9;
+      --neutral-dark: #333;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: var(--neutral-light);
+      color: var(--neutral-dark);
+    }
+
+    header {
+      background-color: var(--berry-navy);
+      color: var(--white);
+      padding: 16px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+    }
+
+    nav li {
+      margin: 0 12px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: bold;
+    }
+
+    nav a.active {
+      border-bottom: 3px solid var(--white);
+      padding-bottom: 2px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: var(--berry-navy);
+    }
+
+    h2.section-title {
+      border-bottom: 3px solid var(--berry-navy);
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 15px;
-      padding: 1em;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
-    .gallery img {
+
+    .gallery-card {
+      background-color: var(--white);
+      border: 2px solid var(--berry-navy);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .gallery-card img {
       width: 100%;
-      height: 220px;
+      height: 200px;
       object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
+      display: block;
     }
-    .gallery img:hover {
-      transform: scale(1.03);
+
+    .gallery-card .caption {
+      padding: 12px;
+    }
+
+    .gallery-card .caption h3 {
+      margin: 0 0 6px 0;
+      color: var(--berry-navy);
+      font-size: 1.1em;
+    }
+
+    .gallery-card .caption p {
+      margin: 0;
+      font-size: 0.9em;
+      color: var(--neutral-dark);
+    }
+
+    footer {
+      background-color: var(--berry-navy);
+      color: var(--white);
+      text-align: center;
+      padding: 12px 0;
+      margin-top: 40px;
+    }
+
+    a {
+      color: var(--berry-navy);
+    }
+
+    a:hover {
+      color: #555;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Berry College Trails</h1>
+    <h1>Berry College Trails Gallery</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="trails.html">Trails</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="about.html">About</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="trails.html">Trails</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <h2>Trail Photo Gallery</h2>
-    <p>Photos of Berry’s beautiful trail system. You can upload more trail photos to the <code>/images</code> folder.</p>
+    <section class="intro">
+      <h2 class="section-title">Trail Photos</h2>
+      <p>Explore images from Berry College trails, highlighting scenic views, wildlife, and student activity. Click on a photo to view more details.</p>
+    </section>
 
-    <div class="gallery">
-      <img src="images/houseofdreams.jpg" alt="House o' Dreams Trail" />
-      <img src="images/reservoirloop.jpg" alt="Reservoir Loop Trail" />
-      <img src="images/oldmill.jpg" alt="Old Mill Trail" />
-      <img src="images/vikingtrail.jpg" alt="Viking Trail" />
-    </div>
+    <section class="gallery-grid">
+      <!-- Viking Trail -->
+      <div class="gallery-card">
+        <img src="images/viking_trail1.jpg" alt="Viking Trail view">
+        <div class="caption">
+          <h3>Viking Trail</h3>
+          <p>Shaded route connecting the main and mountain campuses.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="images/viking_trail2.jpg" alt="Viking Trail forest path">
+        <div class="caption">
+          <h3>Viking Trail</h3>
+          <p>Perfect for biking, jogging, and walking.</p>
+        </div>
+      </div>
+
+      <!-- House o' Dreams Trail -->
+      <div class="gallery-card">
+        <img src="images/house_o_dreams1.jpg" alt="House o' Dreams view">
+        <div class="caption">
+          <h3>House o’ Dreams Trail</h3>
+          <p>Historic house at the top of Lavender Mountain.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="images/house_o_dreams2.jpg" alt="House o' Dreams panoramic view">
+        <div class="caption">
+          <h3>House o’ Dreams Trail</h3>
+          <p>Panoramic campus and valley views.</p>
+        </div>
+      </div>
+
+      <!-- Snow Loop -->
+      <div class="gallery-card">
+        <img src="images/snow_loop1.jpg" alt="Snow Loop trail">
+        <div class="caption">
+          <h3>Snow Loop</h3>
+          <p>Loop through forested ridges and open fields.</p>
+        </div>
+      </div>
+
+      <!-- Longleaf Pine Trail -->
+      <div class="gallery-card">
+        <img src="images/longleaf_pine1.jpg" alt="Longleaf Pine Trail">
+        <div class="caption">
+          <h3>Longleaf Pine Trail</h3>
+          <p>Restoration areas; currently under maintenance as of November 2025.</p>
+        </div>
+      </div>
+
+      <!-- Add more trails/photos similarly -->
+    </section>
   </main>
 
   <footer>
-    <p>© 2025 Berry College Trails Project</p>
+    <p>© 2025 Berry College Trails Project | Built by Berry students</p>
   </footer>
 </body>
 </html>
+
