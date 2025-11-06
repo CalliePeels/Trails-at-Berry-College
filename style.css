@@ -1,32 +1,101 @@
+/* ---------- General ---------- */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f7faf7;
   margin: 0;
-  padding: 0;
+  color: #222;
+  line-height: 1.6;
 }
 
 header {
-  background-color: #004c2c;
+  background-color: #114c2d;
   color: white;
-  padding: 1em;
   text-align: center;
+  padding: 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
 }
 
 nav a {
-  color: white;
-  margin: 0 10px;
+  color: #e5f5e1;
   text-decoration: none;
+  font-weight: 600;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
+  color: #b1f2c0;
   text-decoration: underline;
 }
 
+/* ---------- Sections ---------- */
 main {
-  padding: 1.5em;
+  max-width: 900px;
+  margin: auto;
+  padding: 1.5rem;
 }
 
-footer {
-  background: #eee;
-  text-align: center;
-  padding: 0.5em;
+.intro, .master-map, .maps {
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+
+.trail-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.trail-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+}
+
+.trail-card h3 {
+  margin-top: 0;
+  color: #0f512d;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  background: #114c2d;
+  color: white;
+  font-size: 0.9rem;
+  border-top: 4px solid #b1f2c0;
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 700px) {
+  .trail-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
